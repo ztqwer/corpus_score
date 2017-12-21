@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gtcom.mapper.CorpusMapper">
+	<resultMap id="resultMap" type="com.gtcom.bean.corpus.Corpus">
+		<id property="id" column="id" jdbcType="VARCHAR"/>
+		<result property="corpusId" column="corpus_basic_id" jdbcType="VARCHAR"/>
+		<result property="sourceText" column="source_text" jdbcType="VARCHAR"/>
+		<result property="targetTextOne" column="target_text_one" jdbcType="VARCHAR"/>
+		<result property="targetTextTwo" column="target_text_two" jdbcType="VARCHAR"/>
+		<result property="targetTextThree" column="target_text_three" jdbcType="VARCHAR"/>
+		<result property="targetTextFour" column="target_text_four" jdbcType="VARCHAR"/>
+		<result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<insert id="insertBatch" parameterType="com.gtcom.bean.corpus.Corpus">
+		<selectKey keyProperty="id" resultType="String" order="BEFORE">
+			select replace(uuid(),'-','') from dual
+		</selectKey>
+		insert into corpus(id,corpus_basic_id,source_text,target_text_one,target_text_two,target_text_three,target_text_four,create_time) values
+		<foreach collection="list" item="item" index="index" separator=",">
+				((select replace(uuid(),'-','') from dual),#{item.corpusId,jdbcType=VARCHAR},#{item.sourceText,jdbcType=VARCHAR},#{item.targetTextOne,jdbcType=VARCHAR},#{item.targetTextTwo,jdbcType=VARCHAR},#{item.targetTextThree,jdbcType=VARCHAR},#{item.targetTextFour,jdbcType=VARCHAR},#{item.createTime,jdbcType=TIMESTAMP})
+		</foreach>
+
+	</insert>
+
+
+</mapper>

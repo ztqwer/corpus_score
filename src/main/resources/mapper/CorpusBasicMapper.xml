@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gtcom.mapper.CorpusBasicMapper">
+	<resultMap id="resultMap" type="com.gtcom.bean.corpus.CorpusBasic">
+		<id property="id" column="id" jdbcType="VARCHAR"/>
+		<result property="corpusName" column="corpus_name" jdbcType="VARCHAR"/>
+		<result property="languagePairId" column="language_pair_id" jdbcType="INTEGER"/>
+		<result property="sourceCorpusNum" column="source_corpus_num" jdbcType="INTEGER"/>
+		<result property="targetCorpusNum" column="target_corpus_num" jdbcType="INTEGER"/>
+		<result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+		<result property="createId" column="create_id" jdbcType="VARCHAR"/>
+	</resultMap>
+
+	<insert id="add" parameterType="com.gtcom.bean.corpus.CorpusBasic">
+
+		<selectKey keyProperty="id" resultType="java.lang.String" order="BEFORE">
+			select replace(uuid(),'-','') from dual
+		</selectKey>
+
+		insert into corpus_basic (id,corpus_name,language_pair_id,source_corpus_num,target_corpus_num,create_time,create_id) values (#{id,jdbcType=VARCHAR},#{corpusName,jdbcType=VARCHAR},#{languagePairId,jdbcType=INTEGER},#{sourceCorpusNum,jdbcType=INTEGER},#{targetCorpusNum,jdbcType=INTEGER},#{createTime,jdbcType=TIMESTAMP},#{createId,jdbcType=VARCHAR})
+
+	</insert>
+
+
+</mapper>
