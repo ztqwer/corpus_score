@@ -1,6 +1,6 @@
 package com.gtcom.service.user;
 
-import com.gtcom.bean.User;
+import com.gtcom.bean.user.User;
 
 /**
  * Created by Administrator on 2017/11/28.

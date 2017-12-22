@@ -1,4 +1,4 @@
-package com.gtcom.config;
+package com.gtcom.config.db;
 
 import javax.sql.DataSource;
 

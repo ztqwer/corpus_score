@@ -1,12 +1,12 @@
-package com.gtcom.config;
+package com.gtcom.config.db;
 
-
-import com.gtcom.utils.Mapper;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import tk.mybatis.spring.mapper.MapperScannerConfigurer;
 
 import java.util.Properties;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import tk.mybatis.spring.mapper.MapperScannerConfigurer;
 
 @Configuration
 public class MyBatisScannerConfig {

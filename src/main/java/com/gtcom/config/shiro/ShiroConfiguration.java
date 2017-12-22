@@ -1,4 +1,4 @@
-package com.gtcom.config;
+package com.gtcom.config.shiro;
 
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.cache.ehcache.EhCacheManager;

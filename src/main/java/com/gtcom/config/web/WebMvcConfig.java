@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-package com.gtcom.config;
+package com.gtcom.config.web;
 
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import org.springframework.context.annotation.Configuration;

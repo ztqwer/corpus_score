@@ -1,4 +1,4 @@
-package com.gtcom.utils;
+package com.gtcom.config.db;
 
 import tk.mybatis.mapper.common.BaseMapper;
 import tk.mybatis.mapper.common.ConditionMapper;

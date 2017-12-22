@@ -1,8 +1,9 @@
 package com.gtcom.mapper;
 
-import com.gtcom.bean.User;
-import com.gtcom.utils.Mapper;
 import org.springframework.stereotype.Repository;
+
+import com.gtcom.bean.user.User;
+import com.gtcom.config.db.Mapper;
 
 /**
  * Created by Administrator on 2017/11/28.

@@ -1,13 +1,15 @@
 package com.gtcom.service.user.impl;
 
-import com.gtcom.bean.User;
-import com.gtcom.mapper.UserMapper;
-import com.gtcom.service.user.UserService;
-import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import com.gtcom.bean.user.User;
+import com.gtcom.mapper.UserMapper;
+import com.gtcom.service.user.UserService;
 
 /**
  * Created by Administrator on 2017/11/28.

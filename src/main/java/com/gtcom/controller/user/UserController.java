@@ -1,4 +1,4 @@
-package com.gtcom.controller;
+package com.gtcom.controller.user;
 
 import com.gtcom.service.user.UserService;
 import org.springframework.stereotype.Controller;

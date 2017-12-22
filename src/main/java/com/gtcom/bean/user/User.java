@@ -1,4 +1,4 @@
-package com.gtcom.bean;
+package com.gtcom.bean.user;
 
 import javax.persistence.*;
 import java.util.Date;

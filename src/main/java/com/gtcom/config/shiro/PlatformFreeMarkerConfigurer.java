@@ -1,4 +1,4 @@
-package com.gtcom.config;
+package com.gtcom.config.shiro;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
