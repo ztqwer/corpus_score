@@ -1,121 +1,50 @@
 <!doctype html>
-<html>
-
+<html lang="en">
 <head>
-
-    <title>Amaze UI Admin index Examples</title>
-
-    <link rel="stylesheet" href="/static/css/amazeui.min.css"/>
-    <link rel="stylesheet" href="/static/css/admin.css">
-    <link rel="stylesheet" href="/static/css/app.css">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../../static/js/vue.js"></script>
 </head>
+<div id="app">
 
-<body data-type="generalComponents">
-
-<#include "/common/nav.html">
-<div class="tpl-page-container tpl-page-header-fixed">
-
-    <div class="tpl-content-wrapper">
-        <div class="tpl-content-page-title">
-            Amaze UI 文字列表
-        </div>
-        <ol class="am-breadcrumb">
-            <li><a href="#" class="am-icon-home">首页</a></li>
-            <li><a href="#">Amaze UI CSS</a></li>
-            <li class="am-active">文字列表</li>
-        </ol>
-        <div class="tpl-portlet-components">
-            <div class="portlet-title">
-                <div class="caption font-green bold">
-                    <span class="am-icon-code"></span> 列表
-                </div>
-
-            </div>
-            <div class="tpl-block">
-                <div class="am-g">
-                    <div class="am-u-sm-12 am-u-md-6">
-                        <div class="am-btn-toolbar">
-                            <div class="am-btn-group am-btn-group-xs">
-                                <button type="button" class="am-btn am-btn-default am-btn-success"><span
-                                        class="am-icon-plus"></span> 导入
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="am-u-sm-12 am-u-md-3">
-                        <div class="am-form-group">
-                            <select data-am-selected="{btnSize: 'sm'}">
-                                <option value="option1">语言对</option>
-                                <option value="option2">中-英</option>
-                                <option value="option3">英-中</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="am-u-sm-12 am-u-md-3">
-                        <select data-am-selected="{btnSize: 'sm'}">
-                            <option value="option1">啊啊啊啊</option>
-                            <option value="option2">中-英</option>
-                            <option value="option3">英-中</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="am-g">
-                    <div class="am-u-sm-12">
-                        <form class="am-form">
-                            <table class="am-table am-table-striped am-table-hover table-main">
-                                <thead>
-                                <tr>
-                                    <th class="table-check"><input type="checkbox" class="tpl-table-fz-check"></th>
-                                    <th class="table-id">ID</th>
-                                    <th class="table-title">标题</th>
-                                    <th class="table-type">类别</th>
-                                    <th class="table-author am-hide-sm-only">作者</th>
-                                    <th class="table-date am-hide-sm-only">修改日期</th>
-                                    <th class="table-set">操作</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td>15</td>
-                                    <td><a href="#">Business management</a></td>
-                                    <td>default</td>
-                                    <td class="am-hide-sm-only">测试1号</td>
-                                    <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
-                                    <td>
-                                        <div class="am-btn-toolbar">
-                                            <div class="am-btn-group am-btn-group-xs">
-                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span
-                                                        class="am-icon-pencil-square-o"></span> 编辑
-                                                </button>
-                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span
-                                                        class="am-icon-copy"></span> 复制
-                                                </button>
-                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only">
-                                                    <span class="am-icon-trash-o"></span> 删除
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <hr>
-
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-            <div class="tpl-alert"></div>
-        </div>
-
-
-    </div>
-
+    <select v-model="selected">
+        <option value="0">请选择</option>
+        <option value="zh-en">中-英</option>
+        <option value="en-zh">英-中</option>
+    </select>
+    {{selected}}
+    {{listData}}
 </div>
+<script>
+    new Vue({
+            el:"#app",
+            data(){
+                return {
+                                listData:"",
+                                selected:''
+                }
+            },
+            created(){
+                //调用方法里面的获取数据
+                this.getList();
+            },
+            methods:{
+                getList(){
+                    var _this = this;
+                    axios.get('/corpus/getCorpusList')
+                        .then(function (response) {
+                            _this.listData =  response.data
+                            console.log(response);
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            }
 
 
-</body>
+    })
 
+</script>
 </html>

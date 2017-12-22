@@ -1,8 +1,8 @@
-package com.gtcom.service.impl;
+package com.gtcom.service.corpus.impl;
 
 import com.gtcom.bean.corpus.Corpus;
 import com.gtcom.mapper.CorpusMapper;
-import com.gtcom.service.CorpusService;
+import com.gtcom.service.corpus.CorpusService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

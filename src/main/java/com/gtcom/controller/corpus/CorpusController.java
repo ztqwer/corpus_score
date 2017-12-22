@@ -1,10 +1,11 @@
 package com.gtcom.controller.corpus;
 
 import com.alibaba.fastjson.JSONArray;
+import com.google.gson.Gson;
 import com.gtcom.bean.corpus.Corpus;
 import com.gtcom.bean.corpus.CorpusBasic;
-import com.gtcom.service.CorpusBasicService;
-import com.gtcom.service.CorpusService;
+import com.gtcom.service.corpus.CorpusBasicService;
+import com.gtcom.service.corpus.CorpusService;
 import com.sargeraswang.util.ExcelUtil.ExcelLogs;
 import com.sargeraswang.util.ExcelUtil.ExcelUtil;
 import org.springframework.stereotype.Controller;
@@ -42,8 +43,19 @@ public  class CorpusController {
 
     @RequestMapping("corpusList")
     public String index(){
+
         return "corpus/corpusList";
     }
+
+    @RequestMapping("getCorpusList")
+    @ResponseBody
+    public String  getCorpusList(){
+        List<Map<String,String>> list = corpusBasicService.getList();
+       Gson gson = new Gson();
+
+        return gson.toJson(list).toString();
+    }
+
 
     @RequestMapping(value="import",method= RequestMethod.POST)
     @ResponseBody

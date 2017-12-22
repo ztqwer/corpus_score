@@ -1,6 +1,6 @@
 package com.gtcom.controller;
 
-import com.gtcom.service.UserService;
+import com.gtcom.service.user.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;

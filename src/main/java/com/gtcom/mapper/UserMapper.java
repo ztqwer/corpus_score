@@ -17,6 +17,6 @@ public interface UserMapper extends Mapper<User>{
 
         public int addUser(User user);
 
-        public User getUserByName(String userName);
+//        public User getUserByName(String userName);
 
 }

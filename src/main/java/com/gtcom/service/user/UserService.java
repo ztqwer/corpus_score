@@ -1,4 +1,4 @@
-package com.gtcom.service;
+package com.gtcom.service.user;
 
 import com.gtcom.bean.User;
 

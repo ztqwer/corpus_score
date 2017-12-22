@@ -14,8 +14,8 @@
 				#{createTime,jdbcType=TIMESTAMP})
 	</insert>
 
-	<select id="getUserByName" resultMap="userMap" parameterType="java.lang.String">
-		select * from user where user_name=#{userName,jdbcType=VARCHAR}
-	</select>
+	<!--<select id="getUserByName" resultMap="userMap" parameterType="java.lang.String">-->
+		<!--select * from user where user_name=#{userName,jdbcType=VARCHAR}-->
+	<!--</select>-->
 
 </mapper>

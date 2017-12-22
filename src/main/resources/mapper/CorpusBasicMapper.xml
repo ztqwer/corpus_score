@@ -20,6 +20,8 @@
 		insert into corpus_basic (id,corpus_name,language_pair_id,source_corpus_num,target_corpus_num,create_time,create_id) values (#{id,jdbcType=VARCHAR},#{corpusName,jdbcType=VARCHAR},#{languagePairId,jdbcType=INTEGER},#{sourceCorpusNum,jdbcType=INTEGER},#{targetCorpusNum,jdbcType=INTEGER},#{createTime,jdbcType=TIMESTAMP},#{createId,jdbcType=VARCHAR})
 
 	</insert>
-
+	<select id="getCorpusBasicList" resultType="java.util.HashMap">
+			select * from corpus_basic cb LEFT JOIN language_pair ap on cb.language_pair_id = ap.id
+	</select>
 
 </mapper>

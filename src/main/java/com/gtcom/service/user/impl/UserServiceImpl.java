@@ -1,8 +1,8 @@
-package com.gtcom.service.impl;
+package com.gtcom.service.user.impl;
 
 import com.gtcom.bean.User;
 import com.gtcom.mapper.UserMapper;
-import com.gtcom.service.UserService;
+import com.gtcom.service.user.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserByName(String userName) {
-        return userMapper.getUserByName(userName);
+        return new User();
     }
 
     @Override

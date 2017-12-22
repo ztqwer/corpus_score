@@ -1,4 +1,4 @@
-package com.gtcom.service;
+package com.gtcom.service.corpus;
 
 import com.gtcom.bean.corpus.Corpus;
 
@@ -10,4 +10,5 @@ import java.util.List;
 public interface CorpusService {
 
     public void insertBatch(List<Corpus> list);
+
 }

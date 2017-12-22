@@ -1,7 +1,7 @@
 package com.gtcom.config;
 
 import com.gtcom.bean.User;
-import com.gtcom.service.UserService;
+import com.gtcom.service.user.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
