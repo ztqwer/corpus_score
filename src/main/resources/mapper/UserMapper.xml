@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>  
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gtcom.mapper.UserMapper">
-	<resultMap id="userMap" type="com.gtcom.bean.User">
+	<resultMap id="userMap" type="com.gtcom.bean.user.User">
 		<id property="id" column="id" jdbcType="INTEGER"/>
 		<result property="userName" column="user_name" jdbcType="VARCHAR"/>
 		<result property="passWord" column="password" jdbcType="VARCHAR"/>
 		<result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
 	</resultMap>
 
-	<insert id="addUser" parameterType="com.gtcom.bean.User">
+	<insert id="addUser" parameterType="com.gtcom.bean.user.User">
 		INSERT INTO USER(id,user_name,password,create_time) VALUES
 			(#{id,jdbcType=INTEGER},#{userName,jdbcType=VARCHAR},#{passWord,jdbcType=VARCHAR},
 				#{createTime,jdbcType=TIMESTAMP})
